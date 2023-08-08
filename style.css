@@ -1,0 +1,34 @@
+
+body{
+    padding:0;
+    margin:0;
+}
+
+#container{
+    
+    max-width: 960px;
+    display:flex;
+    flex-direction:column;
+    
+}
+.lineDiv{
+    display:flex;
+    width:100vw;
+}
+.square{
+    aspect-ratio: 1/1;
+    width:10vw;
+    background-color:black;
+    box-sizing: border-box;
+    border: 1px solid white;
+    box-shadow: 0 0 1px white;
+    
+    
+}
+.mouseenter{
+    background-color:aliceblue;
+}
+#header{
+    display:flex;
+    justify-content: center;
+}
