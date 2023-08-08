@@ -8,7 +8,7 @@ header.appendChild(btn);
 
 const button = document.querySelector('.button');
 button.addEventListener('click', () => {
-    let amount = prompt("Enter amount of pixels!(From 1 - 100)");
+   // let amount = prompt("Enter amount of pixels!(From 1 - 100)");
     if(typeof amount !=="number" || amount >100 || amount == "" || amount<1){
         amount = prompt("Enter amount of pixels!(From 1 - 100)");
     } 
@@ -22,27 +22,31 @@ function getGrid(input){
     const container = document.querySelector('#container');
     container.replaceChildren();
 
-for(let j = 0; j<input;j++){
-    
-const lineContainer = document.createElement('div');
-lineContainer.classList.add('lineDiv');
-container.appendChild(lineContainer);
+    for(let j = 0; j<input;j++){
+        const lineContainer = document.createElement('div');
+        lineContainer.classList.add('lineDiv');
+        container.appendChild(lineContainer);
 
-    for(let i = 0; i<input; i++){
-        
-        const square = document.createElement('div');
-        square.classList.add('square');
-        lineContainer.appendChild(square);
+            for(let i = 0; i<input; i++){
+                
+                const square = document.createElement('div');
+                square.classList.add('square');
+                lineContainer.appendChild(square);
+            };
+    };
+        const squares = document.querySelectorAll('.square');
+
+        squares.forEach((square) => {
+            square.addEventListener('mouseenter', (e) => {
+            e.target.style.backgroundColor = random_rgba();
+            });
+        });
 };
+
+
+function random_rgba(){
+    let o = Math.round, r = Math.random, s = 255;
+    return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
 };
-
-const squares = document.querySelectorAll('.square');
-squares.forEach((square) => {
-    square.addEventListener('mouseenter', (e) => {
-        square.classList.add('mouseenter');
-    });
-});
-
-}
 
 
