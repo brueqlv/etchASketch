@@ -23,25 +23,25 @@ function getGrid(input){
     container.replaceChildren();
 
     for(let j = 0; j<input;j++){
-        const lineContainer = document.createElement('div');
-        lineContainer.classList.add('lineDiv');
-        container.appendChild(lineContainer);
+            const lineContainer = document.createElement('div');
+            lineContainer.classList.add('lineDiv');
+            container.appendChild(lineContainer);
 
             for(let i = 0; i<input; i++){
                 
                 const square = document.createElement('div');
                 square.classList.add('square');
                 lineContainer.appendChild(square);
-            };
-    };
-        const squares = document.querySelectorAll('.square');
+            }
+    }
+            const squares = document.querySelectorAll('.square');
 
-        squares.forEach((square) => {
-            square.addEventListener('mouseenter', (e) => {
-            e.target.style.backgroundColor = random_rgba();
+            squares.forEach((square) => {
+                square.addEventListener('mouseenter', (e) => {
+                    e.target.style.backgroundColor = random_rgba();
+                });
             });
-        });
-};
+}
 
 
 function random_rgba(){
